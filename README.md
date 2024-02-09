@@ -34,22 +34,68 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+**Create Resources**
+
+**Step 1: Create a Resource Group**
+- Begin by creating a Resource Group to organize your Azure resources efficiently.
+
+**Step 2: Create Windows 10 Virtual Machine (VM)**
+- Proceed to create a Windows 10 VM.
+- During the VM creation, choose the previously created Resource Group.
+- Allow the VM creation to establish a new Virtual Network (Vnet) and Subnet.
+
+**Step 3: Create Linux (Ubuntu) VM**
+- Create a Linux (Ubuntu) VM.
+- During VM creation, select the previously established Resource Group and Vnet.
+- Utilize Network Watcher to observe your Virtual Network.
+
+**Observe ICMP Traffic**
+
+**Step 4: Connect to Windows 10 VM and Install Wireshark**
+- Use Remote Desktop to connect to your Windows 10 VM.
+- Install Wireshark within the Windows 10 VM.
+
+**Step 5: Observe ICMP Traffic**
+- Open Wireshark and filter for ICMP traffic only.
+- Retrieve the private IP address of the Ubuntu VM and attempt to ping it from within the Windows 10 VM.
+- Observe ping requests and replies within Wireshark.
+- From the Windows 10 VM, attempt to ping a public website and observe the traffic in Wireshark.
+- Initiate a perpetual ping from Windows 10 VM to Ubuntu VM.
+- Disable incoming ICMP traffic in the Network Security Group for the Ubuntu VM.
+- Observe ICMP traffic in Wireshark and command line Ping activity.
+- Re-enable ICMP traffic and observe the traffic in Wireshark and command line Ping activity (confirm it starts working).
+- Stop the ping activity.
+
+**Observe SSH Traffic**
+
+**Step 6: Observe SSH Traffic**
+- Filter Wireshark for SSH traffic only.
+- SSH into the Ubuntu VM from the Windows 10 VM.
+- Type commands into the SSH connection and observe SSH traffic in Wireshark.
+- Exit the SSH connection.
+
+**Observe DHCP Traffic**
+
+**Step 7: Observe DHCP Traffic**
+- Filter Wireshark for DHCP traffic only.
+- Attempt to renew the IP address of the Windows 10 VM using the command line (ipconfig /renew).
+- Observe the DHCP traffic in Wireshark.
+
+**Observe DNS Traffic**
+
+**Step 8: Observe DNS Traffic**
+- Filter Wireshark for DNS traffic only.
+- Use nslookup in the Windows 10 VM's command line to query IP addresses for google.com and disney.com.
+- Observe the DNS traffic in Wireshark.
+
+**Observe RDP Traffic**
+
+**Step 9: Observe RDP Traffic**
+- Filter Wireshark for RDP traffic only (tcp.port == 3389).
+- Note the continuous traffic and consider why it's constant, understanding that RDP provides a live stream from one computer to another.
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
