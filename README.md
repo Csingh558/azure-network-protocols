@@ -23,10 +23,25 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+
+**Step 1: Create Resources in Azure**
+- Create a Resource Group to organize Azure resources effectively.
+- Create a Windows 10 VM in the chosen Resource Group, establishing a new Vnet and Subnet.
+- Create a Linux (Ubuntu) VM using the same Resource Group and Vnet, and observe the Virtual Network using Network Watcher.
+
+**Step 2: Observe ICMP Traffic**
+- Connect to the Windows 10 VM via Remote Desktop and install Wireshark.
+- Use Wireshark to observe ICMP traffic:
+  - Ping the Ubuntu VM from Windows 10.
+  - Perform a perpetual ping.
+  - Disable and re-enable ICMP traffic in the Network Security Group.
+
+**Step 3: Observe SSH, DHCP, DNS, and RDP Traffic**
+- Continue Wireshark observations for different protocols:
+  - Observe SSH traffic by connecting to the Ubuntu VM from Windows 10.
+  - Observe DHCP traffic by attempting to renew the IP address of the Windows 10 VM.
+  - Observe DNS traffic by querying IP addresses for specific domains.
+  - Observe RDP traffic by filtering for RDP-specific traffic (tcp.port == 3389).
 
 <h2>Actions and Observations</h2>
 
